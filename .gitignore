@@ -1,0 +1,62 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+backend/.env
+backend/.env.local
+backend/.env.production
+mobile/.env
+mobile/.env.local
+
+# Build outputs
+dist/
+build/
+*/dist/
+*/build/
+*.log
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# React Native
+mobile/.expo/
+mobile/.expo-shared/
+mobile/ios/Pods/
+mobile/android/.gradle/
+mobile/android/app/build/
+mobile/android/build/
+mobile/android/.idea/
+mobile/android/local.properties
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temporary files
+*.tmp
+temp_icons/
+*.cache
+
+# MongoDB connection strings (security)
+**/.env.local
+**/MONGODB_SETUP.md
+

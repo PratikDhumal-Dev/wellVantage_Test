@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: wellvantage-backend
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:prod
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        value: mongodb+srv://pratikAdmin:7uZqpUVJQDzjRmcW@cluster0.vyrvwhb.mongodb.net/wellvantage?retryWrites=true&w=majority
+        sync: false  # Keep this false for security
+
