@@ -19,7 +19,7 @@ Render is not automatically detecting the `render.yaml` file or the root directo
 ### 3. Configure Build Settings
 In the same **Build & Deploy** section:
 
-- **Build Command**: `npm install --include=dev && npm run build`
+- **Build Command**: `npm install && npx nest build`
 - **Start Command**: `npm run start:prod`
 
 ### 4. Set Environment Variables
