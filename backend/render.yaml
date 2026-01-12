@@ -11,6 +11,5 @@ services:
       - key: PORT
         value: 10000
       - key: MONGODB_URI
-        value: mongodb+srv://pratikAdmin:7uZqpUVJQDzjRmcW@cluster0.vyrvwhb.mongodb.net/wellvantage?retryWrites=true&w=majority
-        sync: false  # Keep this false for security
+        sync: false  # Set this manually in Render dashboard - DO NOT commit credentials
 
