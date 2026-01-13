@@ -39,13 +39,28 @@ export const SignUpScreen = ({ navigation }) => {
       
       // Provide helpful error messages
       if (error.message && error.message.includes('DEVELOPER_ERROR')) {
+        // For production, allow bypassing Google Sign-in for testing
         Alert.alert(
           'Configuration Error',
-          'Google Sign-in is not properly configured. Please check:\n\n' +
-          '1. webClientId is set in googleSignInService.js\n' +
-          '2. SHA-1 fingerprint is added to Google Cloud Console\n' +
-          '3. Package name matches: com.wellvantagetemp\n\n' +
-          'See GOOGLE_SIGNIN_SETUP.md for instructions.'
+          'Google Sign-in is not properly configured.\n\n' +
+          'For production APK, you need to:\n' +
+          '1. Get SHA-1 fingerprint from release keystore\n' +
+          '2. Add it to Google Cloud Console\n' +
+          '3. Wait a few minutes for changes to propagate\n\n' +
+          'Would you like to continue without Google Sign-in?',
+          [
+            {
+              text: 'Cancel',
+              style: 'cancel',
+            },
+            {
+              text: 'Continue',
+              onPress: () => {
+                // Navigate without Google Sign-in for testing
+                navigation.replace('WorkoutManagement');
+              },
+            },
+          ]
         );
       } else if (error.code === 'SIGN_IN_CANCELLED') {
         // User cancelled - don't show error

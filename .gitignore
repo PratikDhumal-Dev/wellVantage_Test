@@ -56,6 +56,11 @@ coverage/
 temp_icons/
 *.cache
 
+# Release builds
+mobile/release/*.apk
+mobile/android/app/build/outputs/
+mobile/android/app/release.keystore
+
 # MongoDB connection strings (security)
 **/.env.local
 **/MONGODB_SETUP.md
